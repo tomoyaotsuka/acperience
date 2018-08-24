@@ -72,7 +72,7 @@ export default {
         },
         {
           property: 'og:url',
-          content: `https://tomoyaotsuka.github.io/the-door-into-summer${this.$route.path}`
+          content: `https://tomoyaotsuka.github.io/acperience${this.$route.path}`
         },
         {
           hid: 'og:title',
@@ -86,11 +86,11 @@ export default {
         },
         {
           property: 'og:image',
-          content: `https://tomoyaotsuka.github.io/the-door-into-summer/images/posts/${this.currentPost.fields.slug}/thumbnail.jpg`
+          content: `https://tomoyaotsuka.github.io/acperience/images/posts/${this.currentPost.fields.slug}/thumbnail.jpg`
         },
         {
           property: 'twitter:url',
-          content: `https://tomoyaotsuka.github.io/the-door-into-summer${this.$route.path}/?share=tw`
+          content: `https://tomoyaotsuka.github.io/acperience${this.$route.path}/?share=tw`
         }
       ]
     }
