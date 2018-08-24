@@ -7,7 +7,7 @@ const client = contentful.createClient({
 
 const routerBase = process.env.DEPLOY_ENV === 'PRD' ? {
   router: {
-    base: '/the-door-into-summer/'
+    base: '/acperience/'
   }
 } : {}
 
@@ -26,8 +26,8 @@ module.exports = {
       { name: 'description', content: '', hid: 'description' },
       { property: 'og:type', content: 'article' },
       { property: 'og:locale', content: 'ja_JP' },
-      { property: 'og:sitename', content: '夏への扉' },
-      { property: 'og:title', content: '夏への扉', hid: 'og:title' },
+      { property: 'og:sitename', content: 'acperience' },
+      { property: 'og:title', content: 'acperience', hid: 'og:title' },
       { property: 'og:description', content: '', hid: 'og:description' },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@tomoya_otsuka' }
