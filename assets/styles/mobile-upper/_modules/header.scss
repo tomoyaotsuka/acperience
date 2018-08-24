@@ -1,0 +1,53 @@
+/*--------------------------------------------------------------------------------*/
+/* Components : Header */
+/*--------------------------------------------------------------------------------*/
+
+.header {
+  position: relative;
+
+  /*----------------------------------------*/
+  /* Menu
+  /*----------------------------------------*/
+
+  .menu {
+    position: absolute;
+    top: 8px;
+    left: auto;
+    right: 0;
+    width: $col3;
+    // height: auto;
+    padding: 0;
+    background: none;
+    font-family: $sans;
+    font-size: 1.3rem;
+    letter-spacing: .025em;
+    text-align: right;
+
+    ul {
+      display: grid;
+      grid-gap: 15.38%;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      li {
+
+        a {
+          &::before {
+            display: none !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*------------------------------------------------------------*/
+/* (Section Name)
+/*------------------------------------------------------------*/
+
+/*----------------------------------------*/
+/* (Module Name)
+/*----------------------------------------*/
+
+/* (Element Name)
+/*--------------------*/

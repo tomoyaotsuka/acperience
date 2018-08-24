@@ -1,0 +1,38 @@
+/*--------------------------------------------------------------------------------*/
+/* Mobile Upper : Layout */
+/*--------------------------------------------------------------------------------*/
+
+.mobile-only {
+  display: none;
+}
+
+.mobile-upper-only {
+  display: block;
+}
+
+.app {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.inner {
+  // margin: 0;
+}
+
+.mainvisual {
+  // margin-left: $col1;
+  // margin-right: $col1;
+}
+
+/*------------------------------------------------------------*/
+/* Layout : Grid
+/*------------------------------------------------------------*/
+
+[class$="mobile-upper-only"] {
+  display: grid;
+
+  table {
+    margin: 0;
+  }
+}
+

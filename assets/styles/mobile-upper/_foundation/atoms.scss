@@ -1,0 +1,51 @@
+/*--------------------------------------------------------------------------------*/
+/* Atoms */
+/*--------------------------------------------------------------------------------*/
+
+.typeface {
+
+  img {
+    width: $col6;
+  }
+}
+
+/*------------------------------------------------------------*/
+/* Atoms : Color Pallet
+/*------------------------------------------------------------*/
+
+.colors {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.diagrams {
+  display: grid;
+  grid-column-gap: $mar1;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  .diagram {
+
+    .box {
+      display: grid;
+      height: calc(100% - 40px);
+
+      .item {
+        display: grid;
+
+        span {
+          align-self: center;
+        }
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+
+      &::after {
+        left: 100%;
+        bottom: calc(50% - 16px);
+        width: calc(#{$mar1-3} - 2px);
+        height: 1px;
+      }
+    }
+  }
+}

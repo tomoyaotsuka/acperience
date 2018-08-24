@@ -1,0 +1,327 @@
+/*--------------------------------------------------------------------------------*/
+/* Atoms */
+/*--------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------*/
+/* Atoms : Text
+/*------------------------------------------------------------*/
+
+.title,
+.headline {
+  @include text-crop(1.8, 32);
+  font-family: $sans;
+  // font-size: 1.8rem;
+  letter-spacing: .050em;
+  // line-height: 3.2rem;
+
+  a {
+    border-color: transparent;
+  }
+}
+
+.subheads {
+  font-size: 1.3rem;
+  letter-spacing: 0.025em;
+}
+
+.bodycopy {
+
+  & + .diagrams {
+    margin-top: $row6;
+  }
+}
+
+.description {
+  font-size: 1.1rem;
+  letter-spacing: 0;
+}
+
+.lists {
+  margin: 0 0 0 $col2;
+
+  li {
+    position: relative;
+    margin: 0 0 $row2;
+    &::before {
+      content: '・';
+      position: absolute;
+      left: - $mar1;
+      width: $mar1;
+    }
+  }
+}
+
+[class^="section-"] {
+
+  > .headline {
+    margin: 0 0 $row2;
+  }
+
+  > .subheads {
+    margin: 0 0 $row4;
+  }
+}
+
+/*------------------------------------------------------------*/
+/* Atoms : Images
+/*------------------------------------------------------------*/
+
+.visual {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 $row6;
+  padding: 61.80% 0 0;
+
+  img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/*------------------------------------------------------------*/
+/* Atoms : Diagram
+/*------------------------------------------------------------*/
+
+.diagram {
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid $black;
+  color: $white;
+  text-align: center;
+
+  > * {
+    font-weight: bold;
+    font-size: 1.0rem;
+  }
+
+  .headline {
+    margin: 0 0 $row1;
+    background: $black;
+    font-size: 1.0rem;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  .item {
+    margin: 0 $row1 $row1;
+    background: $gray50;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: $row4;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 50%;
+      bottom: - $row4;
+      width: 1px;
+      height: $row4;
+      background: $black;
+    }
+  }
+}
+
+/*------------------------------------------------------------*/
+/* Atoms : Typeface
+/*------------------------------------------------------------*/
+
+.typeface {
+  margin: 0 0 $row2;
+  padding: $row2 $col1 $row1;
+  box-sizing: border-box;
+  // border: 1px solid $gray10;
+  border-left: 1px solid $gray10;
+  text-transform: none;
+
+  .headline {
+    margin: 0 0 $row1;
+    color: $gray50;
+    font-size: 1.1rem;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  img {
+    width: $col12;
+  }
+}
+
+// .roman {
+
+//   .typeface {
+//     padding-left: $col2 - $mar1;
+//   }
+// }
+
+/*------------------------------------------------------------*/
+/* Atoms : Color Pallet
+/*------------------------------------------------------------*/
+
+.colors {
+  display: grid;
+  grid-column-gap: $mar1-12;
+  grid-template-columns: 1fr 1fr;
+
+  .color {
+    margin: 0 0 $row4;
+
+    .name {
+      margin: 0 0 $row1;
+    }
+
+    .pallet {
+      // width: $col6;
+      height: 112px;
+      margin: 0 0 $row2;
+    }
+
+    .type {
+      font-size: 1.1rem;
+    }
+
+    .definition {
+      grid-template-columns: $col4 1fr;
+      font-size: 1.0rem;
+      line-height: 1.6rem;
+      &:not(:last-child) {
+        margin: 0 0 $row2;
+      }
+    }
+
+    &:nth-last-child(-n + 2) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*------------------------------------------------------------*/
+/* Atoms : Button
+/*------------------------------------------------------------*/
+
+[class^="button-"] {
+  // @include button(48vw, 12vw, $white, "stroke");
+
+  a {
+    &::after {
+      @include arrow(6px, 1px, $white, "right");
+      right: 10px;
+      transition: all .4s;
+    }
+  }
+
+  &.button--fill {
+    // @include button(100%, 41px, $main, $white, 'fill-transparent');
+  }
+
+  &.button--reverse {
+    // @include button(100%, 41px, $main, $white, 'reverse');
+  }
+
+  &.button--stroke {
+    // @include button(100%, 41px, $main, $white, 'stroke');
+  }
+
+  // fill-fill
+  // fill-stroke
+  // stroke-stroke
+  // stroke-fill
+  // reverse-reverse
+  // reverse-stroke
+  // fillstroke-fill
+  // fillstroke-stroke
+
+  /*----------------------------------------*/
+  /* Mobile Upper
+  /*----------------------------------------*/
+  @include for-size("tablet-portrait-up") {}
+}
+
+.button--fill-fill {
+  @include button(100%, 41px, $main, $white, 'fill-fill');
+}
+
+.button--fill-stroke {
+  @include button(100%, 41px, $main, $white, 'fill-stroke');
+}
+
+/*------------------------------------------------------------*/
+/* Atoms : Icon
+/*------------------------------------------------------------*/
+
+.icon-plus {
+  position: relative;
+  width: vw(34);
+  height: vw(34);
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: vw(4);
+    height: 100%;
+    border-radius: vw(2);
+    background: #ef857d;
+    transform-origin: center;
+    transform: translate(-50%,-50%);
+  }
+  &::after {
+    transform: translate(-50%,-50%) rotate(90deg);
+  }
+}
+
+/*------------------------------------------------------------*/
+/* Atoms : Text
+/*------------------------------------------------------------*/
+
+.mark-reference {
+  display: inline-block;
+  text-indent: -0.7em;
+  padding-left: 1em;
+}
+
+.mark-asterisk {
+  display: inline-block;
+  text-indent: -2em;
+  padding-left: 2em;
+}
+
+.marker {
+  display: inline-block;
+  position: relative;
+  z-index: 0;
+  // padding: 0 1.0em 0 0;
+  white-space: nowrap;
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: .5em;
+    left: 50%;
+    z-index: -1;
+    width: 100%;
+    height: 1.0em;
+    background: #fdf88b;
+    transform: translateX(-50%);
+  }
+}
+
+/*------------------------------------------------------------*/
+/* (Section Name)
+/*------------------------------------------------------------*/
+
+/*----------------------------------------*/
+/* (Module Name)
+/*----------------------------------------*/
+
+/* (Element Name)
+/*--------------------*/
+
