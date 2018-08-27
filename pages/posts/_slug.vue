@@ -8,8 +8,7 @@
     </p>
     <div class="visual">
       <img
-        v-if="currentPost.fields.thumbnail"
-        :src="currentPost.fields.thumbnail.fields.file.url"
+        :src="'../images/posts/' + currentPost.fields.slug + '/thumbnail.jpg'"
       >
     </div>
     <div class="bodycopy">
@@ -214,6 +213,14 @@ export default {
   ol {
     margin-top: $row4;
     margin-bottom: $row4;
+  }
+
+  blockquote {
+    padding: 0 0 0 $col1 + $mar1-12;
+    box-sizing: border-box;
+    border-left: 2px solid $gray10;
+    color: $gray50;
+    font-style: italic;
   }
 }
 
