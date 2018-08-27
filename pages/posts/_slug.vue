@@ -87,10 +87,6 @@ export default {
         {
           property: 'og:image',
           content: `https://tomoyaotsuka.github.io/acperience/images/posts/${this.currentPost.fields.slug}/thumbnail.jpg`
-        },
-        {
-          property: 'twitter:url',
-          content: `https://tomoyaotsuka.github.io/acperience${this.$route.path}/?share=tw`
         }
       ]
     }

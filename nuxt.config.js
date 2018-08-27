@@ -26,9 +26,11 @@ module.exports = {
       { name: 'description', content: '', hid: 'description' },
       { property: 'og:type', content: 'article' },
       { property: 'og:locale', content: 'ja_JP' },
-      { property: 'og:sitename', content: 'acperience' },
-      { property: 'og:title', content: 'acperience', hid: 'og:title' },
+      { property: 'og:sitename', content: 'Acperience' },
+      { property: 'og:title', content: 'Acperience', hid: 'og:title' },
       { property: 'og:description', content: '', hid: 'og:description' },
+      { property: 'og:url', content: `https://tomoyaotsuka.github.io/acperience/` },
+      { property: 'og:image', content: `https://tomoyaotsuka.github.io/acperience/images/common/mainvisual.jpg` },
       { name: 'twitter:card', content: 'summary_large_image' },
       { name: 'twitter:site', content: '@tomoya_otsuka' }
     ],
