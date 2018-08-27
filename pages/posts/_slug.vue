@@ -8,7 +8,7 @@
     </p>
     <div class="visual">
       <img
-        :src="'./images/posts/' + currentPost.fields.slug + '/thumbnail.jpg'"
+        :src="path + '/images/posts/' + currentPost.fields.slug + '/thumbnail.jpg'"
       >
     </div>
     <div class="bodycopy">
@@ -110,7 +110,8 @@ export default {
       })
       return {
         allPosts: posts,
-        currentPost: current[0]
+        currentPost: current[0],
+        path: process.env.DEPLOY_ENV === 'PRD' ? '.' : '..'
       }
     }).catch(console.error)
   },
@@ -163,7 +164,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~assets/styles/_common/fonts';
 @import '~assets/styles/_common/functions';
 @import '~assets/styles/_common/mixin';

@@ -19,6 +19,7 @@ export default {
 @import '~assets/styles/_common/variables';
 
 .header {
+  position: relative;
   margin: 0 $col1;
   padding: $row6 0 0;
 }
