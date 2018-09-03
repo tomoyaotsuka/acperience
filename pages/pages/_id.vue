@@ -1,7 +1,19 @@
 <template>
-  <main class="index">
-    <PostList :posts="posts"></PostList>
-  </main>
+  <div>
+    <ul>
+      <li class="item"
+        v-for="(post, i) in posts"
+        v-if="Number(params) * 2 - 3 < i && i < Number(params) * 2"
+        :key="post.id"
+      >
+        {{ post.fields.title }}
+      </li>
+    </ul>
+    <ul class="pagenation"></ul>
+    <div v-if="posts.length > Number(params) * 2">
+      <a :href="Number(params) + 1">Next</a>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -13,7 +25,7 @@
     components: {
       PostList
     },
-    asyncData ({ env }) {
+    asyncData ({ env, params }) {
       return client.getEntries({
         'content_type': env.CTF_BLOG_POST_TYPE_ID,
         // order: '-sys.createdAt',
@@ -21,7 +33,8 @@
         // 'limit': 3
       }).then(entries => {
         return {
-          posts: entries.items
+          posts: entries.items,
+          params: params.id
         }
       }).catch(console.error)
     }

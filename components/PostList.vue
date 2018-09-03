@@ -2,14 +2,15 @@
   <ul class="post-list">
     <li class="item" v-for="post in posts" :key="post.id">
       <nuxt-link :to="{ name: 'posts-slug', params: { slug: post.fields.slug }}">
-        <div class="thumbnail"
+        <!-- <div class="thumbnail"
           :style="'background-image: url(./images/posts/' + post.fields.slug + '/thumbnail.jpg);'"
-        >
+        > -->
           <!-- <img v-if="post.fields.thumbnail" :src="post.fields.thumbnail.fields.file.url" :alt=""> -->
-          <!-- <img
+        <div class="thumbnail">
+          <img
             v-if="post.fields.thumbnail"
             :src="post.fields.thumbnail.fields.file.url"
-          > -->
+          >
         </div>
         <h3 class="headline">{{ post.fields.title }}</h3>
         <!-- <p>{{ post.fields.publicationDate | formatDate }}</p> -->

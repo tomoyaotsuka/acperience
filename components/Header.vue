@@ -12,7 +12,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '~assets/styles/_common/fonts';
 @import '~assets/styles/_common/functions';
 @import '~assets/styles/_common/mixin';
