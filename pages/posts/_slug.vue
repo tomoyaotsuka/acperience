@@ -11,7 +11,7 @@
         :src="path + '/images/posts/' + currentPost.fields.slug + '/thumbnail.jpg'"
       > -->
       <img
-        :src="'../images/posts/' + currentPost.fields.slug + '/thumbnail.jpg'"
+        :src="'./images/posts/' + currentPost.fields.slug + '/thumbnail.jpg'"
       >
     </div>
     <div class="bodycopy">
